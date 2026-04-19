@@ -1,6 +1,9 @@
+require('dotenv').config()
 const express = require('express')
+const connectToDatabase = require('./database')
 const app = express()
 
+connectToDatabase()
 
 app.get("/",(req,res)=>{
     res.json({
@@ -15,6 +18,6 @@ app.get("/about",(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("Node JS Project started.....")
 })
