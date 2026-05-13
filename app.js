@@ -8,6 +8,12 @@ const upload = multer({ storage: storage })
 const fs = require("fs")
 const { error } = require("console")
 
+const cors = require("cors")
+app.use(cors(
+  {
+  origin:"http://localhost:5173/"
+}
+))
 const app = express()
 app.use(express.json())
 
