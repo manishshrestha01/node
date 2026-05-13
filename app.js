@@ -11,7 +11,7 @@ const { error } = require("console")
 const cors = require("cors")
 app.use(cors(
   {
-  origin:"http://localhost:5173/"
+  origin:"http://localhost:5173"
 }
 ))
 const app = express()
