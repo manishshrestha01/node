@@ -27,8 +27,10 @@ app.get("/", (req, res) => {
 //CREATE
 app.post("/blog", upload.single("image"), async (req, res) => {
   const { title, subtitle, description } = req.body;
-  const filename = req.file.filename;
-
+  let filename;
+  if(req.file){
+     filename = req.file.filename;
+  }
   if (!title || !subtitle || !description) {
     return res.status(400).json({
       message: "Please fill all the details",
