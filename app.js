@@ -29,7 +29,7 @@ app.post("/blog", upload.single("image"), async (req, res) => {
   const { title, subtitle, description } = req.body;
   let filename;
   if(req.file){
-     filename = req.file.filename;
+     filename = "http://localhost:3000/" + req.file.filename;
   }
   if (!title || !subtitle || !description) {
     return res.status(400).json({
