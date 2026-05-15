@@ -13,7 +13,7 @@ app.use(express.json());
 const cors = require("cors");
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "*",
   }),
 );
 connectToDatabase();
